@@ -1,0 +1,671 @@
+{
+	"info": {
+		"_postman_id": "e6f56d82-bc01-4f86-8a4c-af32859c408c",
+		"name": "AUTOMATIZATION_SERVICES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User_Client_Authenticate",
+			"item": [
+				{
+					"name": "user-info",
+					"item": [
+						{
+							"name": "getuserdocumentstatus",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "vid",
+										"value": "{{uidUser}}",
+										"type": "text"
+									},
+									{
+										"key": "correlation-id",
+										"value": "{{$CORRELATION_ID}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updatedatausers",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "vid",
+										"value": "{{uidUser}}",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{accessToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "correlation-id",
+										"value": "{{$CORRELATION_ID}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cityPymeUser\": \"23\",\r\n    \"codeExperienceTimePymeUser\": \"TIEMPO_EXPERIENCIA_PYME-005\",\r\n    \"codeIndustryPymeUser\": \"SECTOR_INDUSTRIA-015\",\r\n    \"codePositionPymeUser\": \"CARGO_PYME-001\",\r\n    \"codeTypePymeUser\": \"TIPO_PYME_VENTAS-002\",\r\n    \"idDepartment\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "authentication",
+					"item": [
+						{
+							"name": "refreshtoken",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "refreshauth",
+										"value": "eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.X5DjvSusZP7NiL_tSIqWg8496VG0eBuYToyd9EsH58958MuIADUz-tEcUVicBnnNAnjyLxSnJ4p6L1sD4UHKqTYJ9AmP9PXkMgzyelLBIaL9GPQ5TBOWRAUV2Tv2rVU4IptSCOYlJ958_J1iSoUFmb4HKMdmdHPAVKmYzzxD99OSuHIb7M-7hZnJ2c99g5N5ge0yeF0yyRD2HF1W9wrFifbeDhbtrou7pmuX4K73JyA_Fr3YFjKjRSKsoFCTPlYrbzYssQTNEMkUMtYwbivrslB0S2lu9ADeF9ovv6pEMgvvyC3uwR8-3-6b8w76ur0bFBy9YFH3wS2SNMsuBcNbwg.5eMdcAcn5HcDqS4m.7LUCPfAGmjg2yrD2_kU2UcWVVBWdbkFRSKbCrJetQyUnhBV0RbJBzvZDRmrZEC9m1YkOKafAByfkO3O2ZRfEgbeg0dLMd_7X_eKmFU2SsPSzEUWAaAv94TB6jaw-2A1FRaZISj8XH3RB9gVgO8WGNbtE1bd02G1ckF6drNTD9K1xvinergJ0YrqKPLc9ewa6FBxxjnPGdo5m1V-4QEHpwJh-jTctHqS64H6hEuAMCPD2jkC5AhfMUBdaS0oYkj7eqzDkHc4Tx6S9e2_lo6WMscsU2D_7hTWrUuUc9vx1WRN7Kue9MDovUi85hq9E6zYoQh-nbaY0tADm_g_SfYjL2K8swTDlKCBGp5RfkseoA5ewrFAZf_A4dEdzjiNWUl63DpPtCraqx6IGPB9cIjnzFGvx2qNcrH4pHlPMT8KIbcp13J3W6NZZtQrtgJOauF_r2UO7YHV3qVaXgJpJNJoYqCGlMmFdGv0PLvVLFQJ2QQoXhnANSFfhppqbF4Uk2K4qbMJFFvNOMBDeo6mIuba5Haw3I-C0FxOW7yxxfLeeOVxadNKyUkjM7rGhGSQ-Rl8bQAnWLpvlN5X-qDgF0eYSh8dkoQ6EJaeZ0lWborXpyRGLK9xFz_NUKQJgQ1A0o3qmmngybcCZf8PWVQ41ATeAm4N_qSJ-TbxEAgCk2NDl1AJWSaNkAW3JndRaNRtFaaS0Y7T3EBnKEro9HezNdDG-fmnVkAGEbI4NeWSeIrQvkra4XVnq1MaQ80j3f-y2jHPuOt1KmbDSYtuPHlAkFWBwNb4nsC3pPj5VpOC1IIzliaQh9wI_qjn9xGSGmYd6nWFLwKpNjITRhhifh1sW8TpF7QhudV7uINn_XXCfG6xTj6BQnH2goz5RitgZYgK2j7AcLVaCZUZVWx5jaPnhUYyd5uqng2k04wRatpX5SXMKWoVHanlgxgf65hR6RVhE2m9-GXaZ8iT8HMe9pYXD0E_HwoPxQQB937cH_POzp1HdXpzihJI0RO0TwHKudRYDu9KViB_FcactDCRCktrcWp9rKcz-nKwTcSwu-4LrAhZF-uVcHi3mGbaAVSbJjOsgb7iIAnqW5MO1jw0nCmuuTYPOIdyECimKqufl7-lHkqWTGEa83CriLcUdVwq6oom47Ll7XXs7vmei1QtSoqp1N5AQ5F_ihRqyA65ldFbx7yK8L2VQGlDde1oHJxF84py9q88jzf_2K21pOvT1UhWXRcqX_at4WTm3xkrPTh7xEbzhJIHNv4v_xMQeUci7y8urc4BSAins1axMnGYcv4mXmSsmbjEW9ljs5rKrGU0LMM3WfvLeWUTD3sa6-0psbA.-l-FfPRohJBxNq-zv9XLIw",
+										"type": "text"
+									},
+									{
+										"key": "correlation-id",
+										"value": "{{$CORRELATION_ID}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{accessToken}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var bodyRequest = { ",
+							"    \"email\": pm.variables.get(\"$EMAIL_USER\"),",
+							"    \"pass\":pm.variables.get(\"$PASS_USER\")",
+							"};",
+							"",
+							"pm.sendRequest({",
+							"    url: pm.environment.get(\"base_url_authenticate\") + '/authentication/refreshtoken',",
+							"    method: 'PUT',",
+							"    header: {",
+							"        'correlation-id': pm.collectionVariables.get(\"$CORRELATION_ID\"),",
+							"        'refreshauth': pm.globals.get(\"refreshToken\")",
+							"    },",
+							"    body: {",
+							"        mode: 'raw',",
+							"        raw: JSON.stringify(bodyRequest)",
+							"    }",
+							"}, (err, res) => {",
+							"    var jsonData = res.json();",
+							"    if(res['code']===200){",
+							"        pm.test(\"RT] La respuesta tiene un refreshToken\", pm.expect(res.text()).to.include(\"result\"));",
+							"        pm.test(\"[RT] La respuesta tiene un refreshToken\", ()=>{",
+							"            pm.expect(res.text()).to.include(\"refreshToken\");",
+							"            pm.globals.set(\"refreshToken\", jsonData[\"result\"][\"refreshToken\"]);",
+							"        });",
+							"        pm.test(\"[RT] La respuesta tiene un accessToken\", ()=>{",
+							"            pm.expect(res.text()).to.include(\"accessToken\");",
+							"            pm.globals.set(\"accessToken\", jsonData[\"result\"][\"accessToken\"]);",
+							"        });",
+							"    }else{",
+							"        login();",
+							"    }",
+							"});",
+							"",
+							"function login(){",
+							"    pm.sendRequest({",
+							"        url: pm.environment.get(\"base_url\") + '/v2/users/signin',",
+							"        method: 'POST',",
+							"        header: {",
+							"            'content-type': 'application/json'",
+							"        },",
+							"        body: {",
+							"            mode: 'raw',",
+							"            raw: JSON.stringify(bodyRequest)",
+							"        }",
+							"    }, (err, res) => {",
+							"        var jsonData = res.json();",
+							"        pm.test('[L] El statusCode del login es 200', pm.expect(jsonData['statusCode']).to.eql(200));",
+							"        pm.test(\"[L] El usuario inicio sesión exitosamente\", pm.expect(jsonData[\"status\"]).to.equals(\"SUCCESS\"));",
+							"        pm.test(\"[L] La respuesta tiene un accessToken\", ()=>{",
+							"            pm.expect(res.text()).to.include(\"accessToken\");",
+							"            pm.globals.set(\"accessToken\", jsonData[\"result\"][\"accessToken\"]);",
+							"        });",
+							"        pm.test(\"[L] La respuesta tiene un expirationDate\", ()=>{",
+							"            pm.expect(res.text()).to.include(\"expirationDate\");",
+							"            pm.globals.set(\"expirationDate\", jsonData[\"result\"][\"expirationDate\"]);",
+							"        });",
+							"        pm.test(\"[L] La respuesta tiene un refreshToken\", ()=>{",
+							"            pm.expect(res.text()).to.include(\"refreshToken\");",
+							"            pm.globals.set(\"refreshToken\", jsonData[\"result\"][\"refreshToken\"]);",
+							"        });",
+							"        pm.test(\"[L] La respuesta tiene un uidUser\", ()=>{",
+							"            pm.expect(res.text()).to.include(\"uidUser\");",
+							"            pm.globals.set(\"uidUser\", jsonData[\"result\"][\"uidUser\"]);",
+							"        });",
+							"    });",
+							"}"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "User_Public",
+			"item": [
+				{
+					"name": "signin",
+					"item": [
+						{
+							"name": "Tests_success",
+							"item": [
+								{
+									"name": "Login Success",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var jsonData = pm.response.json();\r",
+													"\r",
+													"pm.test(\"[R] El usuario inicio sesión exitosamente\", pm.expect(jsonData[\"status\"]).to.equals(\"SUCCESS\"));\r",
+													"\r",
+													"pm.test(\"[R] La respuesta tieene un accessToken\", pm.expect(pm.response.text()).to.include(\"accessToken\"));\r",
+													"pm.globals.set(\"accessToken\", jsonData[\"result\"][\"accessToken\"]);\r",
+													"\r",
+													"pm.test(\"[R] La respuesta tieene un expirationDate\", pm.expect(pm.response.text()).to.include(\"expirationDate\"));\r",
+													"pm.globals.set(\"expirationDate\", jsonData[\"result\"][\"expirationDate\"]);\r",
+													"\r",
+													"pm.test(\"[R] La respuesta tieene un refreshToken\", pm.expect(pm.response.text()).to.include(\"refreshToken\"));\r",
+													"pm.globals.set(\"refreshToken\", jsonData[\"result\"][\"refreshToken\"]);\r",
+													"\r",
+													"pm.test(\"[R] La respuesta tieene un uidUser\", pm.expect(pm.response.text()).to.include(\"uidUser\"));\r",
+													"pm.globals.set(\"uidUser\", jsonData[\"result\"][\"uidUser\"]);\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"{{$EMAIL_USER}}\",\r\n    \"pass\": \"{{$PASS_USER}}\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/signin",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"signin"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"pm.test(\"[TS] El estado es 200\", pm.response.to.have.status(200));",
+											"pm.test(\"[TS] el statusCode es 200\", pm.expect(jsonData[\"statusCode\"]).to.equals(200));",
+											"pm.test(\"[TS] el status es SUCCESS\", pm.expect(jsonData[\"status\"]).to.equals(\"SUCCESS\"));",
+											"pm.test(\"[TS] El response Body contiene un result\", pm.expect(pm.response.text()).to.include(\"result\"));",
+											"",
+											"pm.test('[TS] Check the response', () => {",
+											"    pm.response.to.be.ok",
+											"    pm.response.to.have.body()",
+											"    pm.response.to.have.jsonBody()",
+											"})"
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "Tests_alternative",
+							"item": [
+								{
+									"name": "Login user email incorrect",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var jsonData = pm.response.json();\r",
+													"pm.test(\"[R] El usuario NO inicio sesión exitosamente\", pm.expect(jsonData[\"status\"]).to.equals(\"ERROR\"));\r",
+													"pm.test(\"[R] El estatus es 401\", pm.expect(jsonData[\"statusCode\"]).to.equals(401));\r",
+													"pm.test(\"[R] El message es 'Usuario o contraseña inválidos'\", pm.expect(jsonData[\"message\"]).to.equals(\"Usuario o contraseña inválidos\"));"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"victor.soto123121323@pragma.com.co\",\r\n    \"pass\": \"Pragma2021+\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/signin",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"signin"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Login user password incorrect",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var jsonData = pm.response.json();\r",
+													"pm.test(\"[R] El usuario NO inicio sesión exitosamente\", pm.expect(jsonData[\"status\"]).to.equals(\"ERROR\"));\r",
+													"pm.test(\"[R] El estatus es 401\", pm.expect(jsonData[\"statusCode\"]).to.equals(401));\r",
+													"pm.test(\"[R] El message es 'Usuario o contraseña inválidos'\", pm.expect(jsonData[\"message\"]).to.equals(\"Usuario o contraseña inválidos\"));"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"victor.soto@pragma.com.co\",\r\n    \"pass\": \"asdasasdasdasd+\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/signin",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"signin"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Login user email void",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var jsonData = pm.response.json();\r",
+													"pm.test(\"[R] El usuario NO inicio sesión exitosamente\", pm.expect(jsonData[\"status\"]).to.equals(\"ERROR\"));\r",
+													"pm.test(\"[R] El estatus es 401\", pm.expect(jsonData[\"statusCode\"]).to.equals(400));\r",
+													"pm.test(\"[R] El message es 'Datos incorrectos'\", pm.expect(jsonData[\"message\"]).to.equals(\"Datos incorrectos\"));"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"\",\r\n    \"pass\": \"Pragma2021+\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/signin",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"signin"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Login user password void",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var jsonData = pm.response.json();\r",
+													"pm.test(\"[R] El usuario NO inicio sesión exitosamente\", pm.expect(jsonData[\"status\"]).to.equals(\"ERROR\"));\r",
+													"pm.test(\"[R] El estatus es 401\", pm.expect(jsonData[\"statusCode\"]).to.equals(400));\r",
+													"pm.test(\"[R] El message es 'Datos incorrectos'\", pm.expect(jsonData[\"message\"]).to.equals(\"Datos incorrectos\"));"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"victor.soto@pragma.com.co\",\r\n    \"pass\": \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/signin",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"signin"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Login no body",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var jsonData = pm.response.json();\r",
+													"pm.test(\"[R] El usuario NO inicio sesión exitosamente\", pm.expect(jsonData[\"status\"]).to.equals(\"ERROR\"));\r",
+													"pm.test(\"[R] El estatus es 401\", pm.expect(jsonData[\"statusCode\"]).to.equals(400));\r",
+													"pm.test(\"[R] El message es 'Datos incorrectos'\", pm.expect(jsonData[\"message\"]).to.equals(\"Datos incorrectos\"));"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/signin",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"signin"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"//console.log(\"pm.response.to.have.status(200) \", \"\" + pm.response.to.have.status(200));",
+											"",
+											"",
+											"pm.test(\"[TS] El estado NO es un 200\", pm.response.to.be.error);",
+											"pm.test(\"[TS] el statusCode NO es 200\", pm.expect(jsonData[\"statusCode\"]).to.not.equal(200));",
+											"pm.test(\"[TS] el status NO es SUCCESS\", pm.expect(jsonData[\"status\"]).to.not.equals(\"SUCCESS\"));",
+											"pm.test(\"[TS] El response No tiene un Result\", pm.expect(pm.response.text()).to.not.include(\"result\"));"
+										]
+									}
+								}
+							]
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "PLANTILLAS",
+			"item": [
+				{
+					"name": "Tests_success",
+					"item": [],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.test(\"[TS] El estado es 200\", pm.response.to.have.status(200));",
+									"pm.test(\"[TS] el statusCode es 200\", pm.expect(jsonData[\"statusCode\"]).to.equals(200));",
+									"pm.test(\"[TS] el status es SUCCESS\", pm.expect(jsonData[\"status\"]).to.equals(\"SUCCESS\"));",
+									"pm.test(\"[TS] El response Body contiene un result\", pm.expect(pm.response.text()).to.include(\"result\"));",
+									"",
+									"pm.test('[TS] Check the response', () => {",
+									"    pm.response.to.be.ok",
+									"    pm.response.to.have.body()",
+									"    pm.response.to.have.jsonBody()",
+									"})"
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Tests_alternative",
+					"item": [],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"//console.log(\"pm.response.to.have.status(200) \", \"\" + pm.response.to.have.status(200));",
+									"",
+									"",
+									"pm.test(\"[TS] El estado NO es un 200\", pm.response.to.be.error);",
+									"pm.test(\"[TS] el statusCode NO es 200\", pm.expect(jsonData[\"statusCode\"]).to.not.equal(200));",
+									"pm.test(\"[TS] el status NO es SUCCESS\", pm.expect(jsonData[\"status\"]).to.not.equals(\"SUCCESS\"));",
+									"pm.test(\"[TS] El response No tiene un Result\", pm.expect(pm.response.text()).to.not.include(\"result\"));"
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"console.log(\"Logger Postman: \" + pm.request.url);",
+					"",
+					"//pm.test(\"[G] El tiempo de respuesta es inferior a 3 segundos\", pm.expect(pm.response.responseTime).to.be.below(4000));",
+					"pm.test(\"[G] El response Body contiene un status\", pm.expect(pm.response.text()).to.include(\"status\"));",
+					"pm.test(\"[G] El response Body contiene un statusCode\", pm.expect(pm.response.text()).to.include(\"statusCode\"));"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "$EMAIL_USER",
+			"value": "victor.soto@pragma.com.co",
+			"type": "string"
+		},
+		{
+			"key": "$PASS_USER",
+			"value": "Pragma2022+",
+			"type": "string"
+		},
+		{
+			"key": "$EMAIL_USER_JDI",
+			"value": "victor.soto@pragma.com.co",
+			"type": "string"
+		},
+		{
+			"key": "$PASS_USER_JDI",
+			"value": "Pragma2022+",
+			"type": "string"
+		},
+		{
+			"key": "$CORRELATION_ID",
+			"value": "395b3476-395e-44fa-afa8-a852d3219e83",
+			"type": "string"
+		}
+	]
+}
